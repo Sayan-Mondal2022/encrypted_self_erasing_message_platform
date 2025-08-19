@@ -1,0 +1,310 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ===== Login/Register Card ===== */
+#auth-section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+#auth-section h2 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+#auth-section input {
+  width: 90%;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#auth-section button {
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+#auth-section button:hover {
+  background: #1e40af;
+}
+
+#auth-section p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+#auth-section a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#auth-section a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Chat Layout ===== */
+.chat-container {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 25%;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h3 {
+  margin: 15px;
+  font-size: 18px;
+}
+
+#search-user {
+  margin: 0 10px 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+#user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+#user-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 4px 8px;
+  transition: background 0.2s;
+}
+
+#user-list li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.user-dp {
+  width: 35px;
+  height: 35px;
+  background: white;
+  color: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Chat Section */
+.chatbox {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1d4ed8;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+}
+
+#selected-user-info {
+  display: flex;
+  align-items: center;
+}
+
+#user-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+/* --- REMOVED --- */
+/* The :active and :hover rules were removed from here to let JavaScript control the dropdown */
+
+#logout-dropdown {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  /* This will be toggled by the .hidden class */
+  color: #1d4ed8;
+  cursor: pointer;
+  z-index: 20;
+}
+
+#logout-dropdown:hover {
+  background: #e0e7ff;
+}
+
+#messages {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin: 8px 0;
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 65%;
+  word-wrap: break-word;
+}
+
+/* Sent & Received */
+.sent {
+  background: #2563eb;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+
+.received {
+  background: #e5e7eb;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+
+/* Gift Messages */
+.gift {
+  background: #facc15;
+  color: #1e293b;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.gift.unwrapped {
+  background: #22c55e;
+  color: white;
+  cursor: default;
+}
+
+.gift.expired {
+  background: #ef4444;
+  color: white;
+  cursor: default;
+}
+
+/* Input Area */
+.input-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #f9fafb;
+  position: relative;
+}
+
+#emoji-btn {
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 8px;
+  background: none;
+  border: none;
+}
+
+#message-input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-box button {
+  margin-left: 8px;
+  padding: 10px 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-box button:hover {
+  background: #1e40af;
+}
+
+/* Emoji Picker */
+.emoji-picker {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+#emoji-picker span {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+#emoji-picker span:hover {
+  transform: scale(1.2);
+}
+
+.hidden {
+  display: none;
+}

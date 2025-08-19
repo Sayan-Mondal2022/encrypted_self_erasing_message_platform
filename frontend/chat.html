@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Message Chat</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+
+  <!-- Auth Section -->
+  <div id="auth-section">
+    <div id="login-form">
+      <h2>Login</h2>
+      <input type="text" id="login-username" placeholder="Username">
+      <input type="password" id="login-password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+    </div>
+
+    <div id="register-form" class="hidden">
+      <h2>Register</h2>
+      <input type="text" id="register-name" placeholder="Full Name">
+      <input type="text" id="register-username" placeholder="Username">
+      <input type="password" id="register-password" placeholder="Password">
+      <button onclick="register()">Register</button>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+  </div>
+
+  <!-- Chat Container -->
+  <div id="chat-container" class="hidden">
+    <div class="sidebar">
+      <h3>Users (<span id="user-count">0</span>)</h3>
+      <input type="text" id="search-user" placeholder="Search user..." oninput="searchUsers()">
+      <ul id="user-list"></ul>
+    </div>
+
+    <div class="chatbox">
+      <div class="chat-header">
+        <!-- FIX 2: Correctly grouped the selected user's info -->
+        <div id="selected-user-info">
+          <div id="user-dp" class="user-dp"></div>
+          <span id="chat-username" style="margin-left: 10px;">Select a user</span>
+        </div>
+
+        <div id="user-menu">
+          <div id="current-user-dp" class="user-dp"></div>
+          <button id="logout-dropdown" class="hidden" onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <div id="messages"></div>
+
+      <div class="input-box">
+        <button id="emoji-btn">😊</button>
+        <div id="emoji-picker" class="hidden emoji-picker"></div>
+        <input type="text" id="message-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
