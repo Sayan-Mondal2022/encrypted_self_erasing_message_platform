@@ -9,14 +9,14 @@ const renderedMessageIds = new Set();
 // DOM Elements
 const emojiBtn = document.getElementById("emoji-btn");
 const emojiPicker = document.getElementById("emoji-picker");
-const emojis = ["😀","😂","😍","😎","😢","👍","🔥","🎉","💡","❤️","🤔","🎁","✨","👋"];
+const emojis = ["😁","😀","😂","😍","😎","😢","👍","🔥","🎉","🥰","❤️","🤔","🎁","✨","👋"];
 
 // Initialize the app
 function init() {
   renderEmojis();
 }
 
-// ---------------- AUTH FUNCTIONS ----------------
+// AUTH FUNCTIONS
 function showRegister() {
   document.getElementById("login-form").classList.add("hidden");
   document.getElementById("register-form").classList.remove("hidden");
@@ -177,9 +177,9 @@ async function loadChatHistory(user) {
         msgDiv.classList.add("message", "sent");
         const gift = document.createElement("div");
         gift.classList.add("gift");
-        gift.innerText = "🎁 Gift Sent (Click to View)";
+        gift.innerText = "🎁 Gift Sent";
         gift.onclick = () => {
-          gift.innerText = "Secret Message";
+          gift.innerText = "You have sent can't be read";
           gift.classList.add("unwrapped");
         };
         msgDiv.appendChild(gift);
@@ -255,9 +255,9 @@ async function sendMessage() {
 
     const gift = document.createElement("div");
     gift.classList.add("gift");
-    gift.innerText = "🎁 Gift Sent (Click to View)";
+    gift.innerText = "🎁 Gift Sent";
     gift.onclick = () => {
-      gift.innerText = "Secret Message";
+      gift.innerText = "You have sent can't be read";
       gift.classList.add("unwrapped");
     };
 
@@ -329,7 +329,7 @@ async function pollMessages() {
   setTimeout(pollMessages, 3000); // keep polling every 3s
 }
 
-// ---------------- EMOJI PICKER ----------------
+// EMOJI PICKER
 function renderEmojis() {
   emojiPicker.innerHTML = "";
   emojis.forEach((e) => {

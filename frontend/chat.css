@@ -1,5 +1,5 @@
 body {
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-family: cursive;
   background: linear-gradient(135deg, #dbeafe, #eff6ff);
   height: 100vh;
   margin: 0;
@@ -8,12 +8,10 @@ body {
   align-items: center;
 }
 
-
-/* ===== Login/Register Card ===== */
 #auth-section {
   background: white;
   padding: 25px;
-  border-radius: 15px;
+  border-radius: 20px;
   width: 350px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
@@ -22,6 +20,7 @@ body {
 #auth-section h2 {
   margin-bottom: 10px;
   color: #1e3a8a;
+  font-size: 30px;
 }
 
 #auth-section input {
@@ -30,11 +29,15 @@ body {
   margin: 6px 0;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 17px;
+  outline: none;
+  font-family: inherit;
+  height: 3vh;
 }
 
 #auth-section button {
   width: 95%;
+  height: 6vh;
   padding: 10px;
   margin-top: 10px;
   background: #2563eb;
@@ -43,7 +46,9 @@ body {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  transition: 0.2s;
+  transition: all 0.25s;
+  font-family: inherit;
+  font-size: 18px;
 }
 
 #auth-section button:hover {
@@ -52,7 +57,7 @@ body {
 
 #auth-section p {
   margin-top: 15px;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 #auth-section a {
@@ -96,7 +101,9 @@ body {
   border: none;
   border-radius: 8px;
   outline: none;
-  font-size: 14px;
+  font-size: 15px;
+  height: 3vh;
+  font-family: inherit;
 }
 
 #user-list {
@@ -115,6 +122,7 @@ body {
   border-radius: 10px;
   margin: 4px 8px;
   transition: background 0.2s;
+  font-size: 1.2rem;
 }
 
 #user-list li:hover {
@@ -122,8 +130,8 @@ body {
 }
 
 .user-dp {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background: white;
   color: #2563eb;
   border-radius: 50%;
@@ -149,11 +157,13 @@ body {
   color: white;
   padding: 12px 20px;
   font-weight: bold;
+  height: 9vh;
 }
 
 #selected-user-info {
   display: flex;
   align-items: center;
+  font-size: 26px;
 }
 
 #user-menu {
@@ -161,21 +171,20 @@ body {
   cursor: pointer;
 }
 
-/* --- REMOVED --- */
-/* The :active and :hover rules were removed from here to let JavaScript control the dropdown */
-
 #logout-dropdown {
   position: absolute;
   right: 0;
   top: 40px;
   background: white;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 8px 12px;
-  /* This will be toggled by the .hidden class */
   color: #1d4ed8;
   cursor: pointer;
   z-index: 20;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 #logout-dropdown:hover {
@@ -201,39 +210,41 @@ body {
 
 /* Sent & Received */
 .sent {
-  background: #2563eb;
-  color: white;
+  background: #1284c9;
+  color: #d7f0ff;
   align-self: flex-end;
   border-bottom-right-radius: 5px;
 }
 
 .received {
-  background: #e5e7eb;
+  background: #1284c9;
+  color: #d7f0ff;
   align-self: flex-start;
   border-bottom-left-radius: 5px;
 }
 
 /* Gift Messages */
 .gift {
-  background: #facc15;
-  color: #1e293b;
+  background: #1284c9;
+  color: #d7f0ff;
   font-weight: bold;
   padding: 8px 12px;
   border-radius: 12px;
   cursor: pointer;
   text-align: center;
+  font-family: cursive;
 }
 
 .gift.unwrapped {
-  background: #22c55e;
+  background: #1284c9;
   color: white;
   cursor: default;
 }
 
 .gift.expired {
-  background: #ef4444;
-  color: white;
-  cursor: default;
+  font-style: italic;
+  font-family: cursive;
+  color: #fff;
 }
 
 /* Input Area */
@@ -250,8 +261,10 @@ body {
   font-size: 22px;
   cursor: pointer;
   margin-right: 8px;
-  background: none;
   border: none;
+  background: #068af7;
+  display: flex;
+  justify-content: center;
 }
 
 #message-input {
@@ -260,7 +273,9 @@ body {
   border-radius: 20px;
   border: 1px solid #ccc;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
+  height: 5vh;
+  font-family: inherit;
 }
 
 .input-box button {
